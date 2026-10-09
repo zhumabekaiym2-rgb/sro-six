@@ -24,7 +24,6 @@ public class MainApp {
 
         int nMax = 20;
 
-        // 1. Прямая рекурсия (вперед)
         double[] iForward = new double[nMax + 1];
         iForward[0] = 1.0 - 1.0 / Math.E;
 
@@ -32,13 +31,20 @@ public class MainApp {
             iForward[n] = 1.0 - n * iForward[n - 1];
         }
 
-        // 2. Обратная рекурсия (назад)
         int N_start = 30;
         double[] iBackward = new double[N_start + 1];
         iBackward[N_start] = 0.0;
 
         for (int n = N_start; n >= 1; n--) {
             iBackward[n - 1] = (1.0 - iBackward[n]) / n;
+        }
+
+        System.out.println("n \t Прямая рекурсия \t Обратная рекурсия \t Абс. Разница");
+        System.out.println("--------------------------------------------------------------------------");
+
+        for (int n = 0; n <= nMax; n++) {
+            double diff = Math.abs(iForward[n] - iBackward[n]);
+            System.out.println(n + " \t " + iForward[n] + " \t " + iBackward[n] + " \t " + diff);
         }
     }
 }
