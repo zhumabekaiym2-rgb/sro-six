@@ -2,7 +2,7 @@ package kz.kaznu.aiym.first;
 
 public class MainApp {
     public static void main(String[] args) {
-        System.out.println("ЭКСПЕРИМЕНТ 1: Машинное эпсилон");
+        System.out.println("ЭКСПЕРИМЕНТ 1:Машинное эпсилон");
 
         float epsFloat = 1.0f;
         while ((1.0f + epsFloat / 2.0f) != 1.0f) {
